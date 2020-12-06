@@ -1,0 +1,27 @@
+body {
+    background-color: #282a36 ;
+}
+
+h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #f8f8f2;
+}
+
+h2 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #f8f8f2;
+}
+
+label {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #f8f8f2;
+}
+
+ul {
+    color: #f8f8f2;
+}
+
+.list-group-item {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    background: #6272a4
+}

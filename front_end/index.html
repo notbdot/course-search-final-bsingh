@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Course Search </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <link rel="stylesheet" href="app_css.css">
+        <script src="app_code.js"> </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Welcome to Course Search!</h1>
+            <h2>Use one of the queries below to find a course.</h2>
+        </div>
+        
+        <div class="container">
+        <form class="form-horizontal" onsubmit="return false;" id="queryForm">
+            <label for="nameQuery">Search by name:</label><br>
+            <input type="text" id="nameQuery" name="nameQuery" value=""><br>
+            <input id="queryByName" type="button" class="btn btn-primary" onclick="updateView(this)" value="Query" data-queryType="by_instructor">
+        </form>
+        </div>
+        
+        <div class="container">
+        <form class="form-horizontal" onsubmit="return false;" id="queryForm">
+            <label for="codeQuery">Search by course code: </label><br>
+            <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+            <input id="queryByCode" type="button" class="btn btn-primary" onclick="updateView(this)" value="Query" data-queryType="by_code">
+        </form>
+        </div>
+
+        <div class="container">
+        <form class="form-horizontal" onsubmit="return false;" id="queryForm">
+            <label for="titleQuery">Search by course title: </label><br>
+            <input type="text" id="titleQuery" name="titleQuery" value=""><br>
+            <input id="queryByTitle" type="button" class="btn btn-primary" onclick="updateView(this)" value="Query" data-queryType="by_title">
+        </form>
+        </div>
+        
+        <div class="container">
+        <form class="form-horizontal" onsubmit="return false;" id="queryForm">
+            <label for="levelQuery">Search by course level: </label><br>
+            <input type="text" id="levelQuery" name="levelQuery" value=""><br>
+            <input id="queryByLevel" type="button" class="btn btn-primary" onclick="updateView(this)" value="Query" data-queryType="by_level">
+        </form>
+        </div>
+
+        <div class="container">
+        <form class="form-horizontal" onsubmit="return false;" id="queryForm">
+            <label for="combinedQuery">Search by instructor and course level: </label><br>
+            <input type="text" id="combinedIns" name="combinedQuery" value=""><br>
+            <input type="text" id="combinedLev" name="combinedQuery" value=""><br>
+            <input id="queryByNameandLevel" type="button" class="btn btn-primary" onclick="updateView(this)" value="Query" data-queryType="combined_query">
+        </form>
+        </div>
+
+        <div class="container">
+        <h1>Results: </h1>
+        </div>
+
+        <div id="results">
+
+        </div>
+    </body>
+</html>
+
+<script id="show_results_view" type="text/x-handlebars-template">
+    <div class="container">
+    <ul>
+        {{#each courses}}
+        <li class="list-group-item"> Course Code: {{this.course_code}} | Course Level: {{this.course_level}} | Title: {{this.title}} | Instructor: {{this.instructor}} </li>
+        {{/each}}
+    </ul>
+    </div>
+</script>
