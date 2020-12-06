@@ -4,8 +4,8 @@
   "description": "",
   "main": "restAPi.js",
   "scripts": {
+    "start":"restApi.js"
     "test": "echo \"Error: no test specified\" && exit 1"
-    "start": "restAPi.js"
   },
   "author": "",
   "license": "ISC",
