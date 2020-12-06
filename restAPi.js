@@ -2,6 +2,8 @@ var PORT = process.env.PORT || 3000;
 var express = require("express");
 var app = express();
 
+export {PORT};
+
 var api_routes = require('./api_routes.js');
 app.use('/api', api_routes);
 
