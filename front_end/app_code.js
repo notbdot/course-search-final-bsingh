@@ -1,5 +1,3 @@
-import {PORT} from './restAPi.js'
-
 var updateView = async (button) => {
     if (button.dataset.querytype == 'by_instructor') {
         let queryvalue = document.querySelector('#nameQuery').value;
