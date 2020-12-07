@@ -1,26 +1,25 @@
 var URL = window.location.hostname;
-var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 var updateView = async (button) => {
     if (button.dataset.querytype == 'by_instructor') {
         let queryvalue = document.querySelector('#nameQuery').value;
-        api = `https://course-search-final.herokuapp.com/api/by_instructor/${queryvalue}`;
+        api = `https://${URL}/api/by_instructor/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_code') {
         let queryvalue = document.querySelector('#codeQuery').value;
-        api = `https://course-search-final.herokuapp.com/api/by_course_code/${queryvalue}`;
+        api = `https://${URL}/api/by_course_code/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_title') {
         let queryvalue = document.querySelector('#titleQuery').value;
-        api = `https://course-search-final.herokuapp.com/api/by_title/${queryvalue}`;
+        api = `https://${URL}/api/by_title/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_level') {
         let queryvalue = document.querySelector('#levelQuery').value;
-        api = `https://course-search-final.herokuapp.com/api/by_level/${queryvalue}`;
+        api = `https://${URL}/api/by_level/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'combined_query') {
         let combinedIns = document.querySelector('#combinedIns').value;
         let combinedLev = document.querySelector('#combinedLev').value;
-        api = `https://course-search-final.herokuapp.com/api/combined_query/${combinedIns}/${combinedLev}`;
+        api = `httpS://${URL}/api/combined_query/${combinedIns}/${combinedLev}`;
     }
 
     const data = await fetch(api);
