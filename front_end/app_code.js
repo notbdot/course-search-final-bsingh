@@ -1,10 +1,11 @@
 //var port = location.port;
-var currentLocation = window.location.port;
+//var currentLocation = window.location.port;
+var URL = window.location.hostname;
 var updateView = async (button) => {
     if (button.dataset.querytype == 'by_instructor') {
         let queryvalue = document.querySelector('#nameQuery').value;
-        console.log(currentLocation);
-        api = `http://localhost:${currentLocation}/api/by_instructor/${queryvalue}`;
+        console.log(URL);
+        api = `http://${URL}/api/by_instructor/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_code') {
         let queryvalue = document.querySelector('#codeQuery').value;
