@@ -4,6 +4,7 @@ var updateView = async (button) => {
     if (button.dataset.querytype == 'by_instructor') {
         let queryvalue = document.querySelector('#nameQuery').value;
         api = `http://localhost:${currentLocation}/api/by_instructor/${queryvalue}`;
+        console.log(currentLocation);
     }
     else if (button.dataset.querytype == 'by_code') {
         let queryvalue = document.querySelector('#codeQuery').value;
