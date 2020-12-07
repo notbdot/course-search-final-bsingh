@@ -23,18 +23,7 @@ var updateView = async (button) => {
         api = `https://course-search-final.herokuapp.com/api/combined_query/${combinedIns}/${combinedLev}`;
     }
 
-    const data = await fetch(proxyUrl + api)
-    .then(blob => blob.json())
-    .then(data => {
-      console.table(data);
-      document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
-      return data;
-    })
-    .catch(e => {
-      console.log(e);
-      return e;
-    });
-    
+    const data = await fetch(api);
     const model = await data.json();
 
     render_view(model);
