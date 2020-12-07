@@ -1,28 +1,25 @@
-//var port = location.port;
-//var currentLocation = window.location.port;
 var URL = window.location.hostname;
 var updateView = async (button) => {
     if (button.dataset.querytype == 'by_instructor') {
         let queryvalue = document.querySelector('#nameQuery').value;
-        console.log(URL);
         api = `https://${URL}/api/by_instructor/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_code') {
         let queryvalue = document.querySelector('#codeQuery').value;
-        api = `http://localhost:3000/api/by_course_code/${queryvalue}`;
+        api = `https://${URL}/api/by_course_code/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_title') {
         let queryvalue = document.querySelector('#titleQuery').value;
-        api = `http://localhost:3000/api/by_title/${queryvalue}`;
+        api = `https://${URL}/api/by_title/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'by_level') {
         let queryvalue = document.querySelector('#levelQuery').value;
-        api = `http://localhost:3000/api/by_level/${queryvalue}`;
+        api = `https://${URL}/api/by_level/${queryvalue}`;
     }
     else if (button.dataset.querytype == 'combined_query') {
         let combinedIns = document.querySelector('#combinedIns').value;
         let combinedLev = document.querySelector('#combinedLev').value;
-        api = `http://localhost:3000/api/combined_query/${combinedIns}/${combinedLev}`;
+        api = `httpS://${URL}/api/combined_query/${combinedIns}/${combinedLev}`;
     }
 
     const data = await fetch(api);
